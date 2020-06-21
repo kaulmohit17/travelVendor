@@ -1,0 +1,215 @@
+/* fonts  */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* genreal body  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* header  */
+header {
+  min-height: 100vh;
+  color: whitesmoke;
+  text-transform: capitalize;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.8)),
+    url(./projectImages/suitcasePic.jpg) center/cover no-repeat;
+}
+
+/* nav bar */
+nav {
+  background: whitesmoke;
+  box-shadow: 0 10px 5px 5px rgba(0, 0, 0, 0.15);
+}
+.nav-logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.toggle-btn {
+  font-size: 2.5rem;
+  color: lightblue;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+.toggle-btn:hover {
+  animation: sizeTransform 1s linear;
+  color: darkcyan;
+}
+.logo-image {
+  height: 120px;
+  width: 120px;
+}
+/* for nav position fixes afer scrolling down y axis */
+.nav-toggle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 10px 5px 5px rgba(0, 0, 0, 0.15);
+}
+.nav-toggle .links a {
+  color: lightblue;
+}
+/* ====================== */
+
+/* links  */
+.link-container {
+  height: 0;
+  overflow: hidden;
+  font-size: large;
+  transition: 0.5s linear;
+}
+/* .show-links {
+  height: 15rem;
+  font-size: xx-large;
+  margin-left: 1em;
+  line-height: 1.2em;
+} */
+
+.links li {
+  list-style: none;
+  margin-top: 0.5em;
+}
+.links a {
+  display: block;
+  color: lightblue;
+  text-decoration: none;
+  margin-left: 1em;
+  padding: 1rem 0;
+}
+.links a:hover {
+  color: darkcyan;
+}
+
+
+@keyframes sizeTransform {
+  0% {
+    transform: scale(1);
+    transform: rotate(0);
+  }
+  50% {
+    transform: scale(1.5);
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(0);
+  }
+}
+
+/* media query  */
+@media screen and (min-width: 800px) {
+  nav {
+    background: transparent;
+    box-shadow: 0 0;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .toggle-btn {
+    display: none;
+  }
+  .link-container{
+    height: auto !important;
+    margin-right: 2em;
+  }
+  .links {
+    display: flex;
+  }
+  .links li a {
+    color: white;
+    font-size: xx-large;
+  }
+}
+/* banner */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.banner h1 {
+  font-size: 5em;
+  font-weight: lighter;
+}
+.banner p {
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+.banner .explore-tour-btn {
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding: 0.2em;
+  border: 2px solid whitesmoke;
+  background: transparent;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 500px) {
+  .banner h1 {
+    font-size: 3em;
+    font-weight: lighter;
+  }
+  .banner p {
+    font-size: 1em;
+    font-weight: lighter;
+  }
+}
+
+/* sections */
+
+.section {
+  height: 70vh;
+  text-align: center;
+}
+#about {
+  background: lightblue;
+}
+#services {
+  background-color: whitesmoke;
+}
+#tours {
+  background-color: lightblue;
+}
+
+    /* footer  */
+.footer{
+  height:10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-link{
+  position:fixed;
+  color:darkcyan;
+  font-size: 3em;
+  bottom: 0.3em;
+  right: 1em;
+  animation: topLinkScale 0.8s linear infinite;
+  visibility: hidden;
+}
+.top-link-toggle{
+  visibility: visible;
+}
+@keyframes topLinkScale {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
